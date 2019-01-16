@@ -1,5 +1,6 @@
 package jeff.tictactoe;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -120,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
         if (xTurn) {
             button.setText("X");
             button.setTextSize(20);
+            button.setTextColor(Color.RED);
             xTurn = false;
             oTurn = true;
             gameBoard[pos] = 'X';
@@ -127,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
         else {
             button.setText("O");
             button.setTextSize(20);
+            button.setTextColor(Color.BLUE);
             xTurn = true;
             oTurn = false;
             gameBoard[pos] = 'O';
