@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
@@ -14,5 +15,118 @@
         android:text="Hello World!"
         android:textSize="30sp"
         tools:text="Jeff's Tic-Tac-Toe Game" />
+
+    <LinearLayout
+        android:id="@+id/gameBoardLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="39dp" />
+
+        <LinearLayout
+            android:id="@+id/tableRow1"
+            android:layout_width="match_parent"
+            android:layout_height="119dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="120sp"
+                android:layout_height="120sp"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="120sp"
+                android:layout_height="120sp"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="120sp"
+                android:layout_height="120sp"
+                android:text="Button" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tableRow2"
+            android:layout_width="match_parent"
+            android:layout_height="121dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="120sp"
+                android:layout_height="120sp"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="120sp"
+                android:layout_height="120sp"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="120sp"
+                android:layout_height="120sp"
+                android:text="Button" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tableRow3"
+            android:layout_width="match_parent"
+            android:layout_height="124dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="120sp"
+                android:layout_height="120sp"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="120sp"
+                android:layout_height="120sp"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="120sp"
+                android:layout_height="120sp"
+                android:text="Button" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/bottomMsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/p1_s_turn"
+            android:textSize="25sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="11dp" />
+
+        <Button
+            android:id="@+id/newGameButton"
+            android:layout_width="200sp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="New Game" />
+
+    </LinearLayout>
 
 </LinearLayout>
