@@ -27,75 +27,75 @@ public class MainActivity extends AppCompatActivity {
         xTurn = true;
         oTurn = false;
 
-        Button button1 = (Button) findViewById(R.id.button1);
+        final Button button1 = (Button) findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                makeMove();
+                makeMove(button1,0);
             }
         });
 
-        Button button2 = (Button) findViewById(R.id.button2);
+        final Button button2 = (Button) findViewById(R.id.button2);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                makeMove();
+                makeMove(button2,1);
             }
         });
 
-        Button button3 = (Button) findViewById(R.id.button3);
+        final Button button3 = (Button) findViewById(R.id.button3);
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                makeMove();
+                makeMove(button3,2);
             }
         });
 
-        Button button4 = (Button) findViewById(R.id.button4);
+        final Button button4 = (Button) findViewById(R.id.button4);
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                makeMove();
+                makeMove(button4,3);
             }
         });
 
-        Button button5 = (Button) findViewById(R.id.button5);
+        final Button button5 = (Button) findViewById(R.id.button5);
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                makeMove();
+                makeMove(button5,4);
             }
         });
 
-        Button button6 = (Button) findViewById(R.id.button6);
+        final Button button6 = (Button) findViewById(R.id.button6);
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                makeMove();
+                makeMove(button6,5);
             }
         });
 
-        Button button7 = (Button) findViewById(R.id.button7);
+        final Button button7 = (Button) findViewById(R.id.button7);
         button7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                makeMove();
+                makeMove(button7,6);
             }
         });
 
-        Button button8 = (Button) findViewById(R.id.button8);
+        final Button button8 = (Button) findViewById(R.id.button8);
         button8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                makeMove();
+                makeMove(button8,7);
             }
         });
 
-        Button button9 = (Button) findViewById(R.id.button9);
+        final Button button9 = (Button) findViewById(R.id.button9);
         button9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                makeMove();
+                makeMove(button9,8);
             }
         });
 
@@ -108,9 +108,46 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void makeMove() {}
+    public void makeMove(Button button, int pos) {
+        if (xTurn) {
+            button.setText("X");
+            button.setTextSize(20);
+            xTurn = false;
+            oTurn = true;
+            gameBoard[pos] = 'X';
+        }
+        else {
+            button.setText("O");
+            button.setTextSize(20);
+            xTurn = true;
+            oTurn = false;
+            gameBoard[pos] = 'O';
+        }
+        updateWinners();
+    }
 
-    public void newGame() {}
+    public void newGame() {
+        gameBoard = new char[] {'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'};
+        gameOver = false;
+        xWins = false;
+        oWins = false;
+        xTurn = true;
+        oTurn = false;
+        updateBottomMsg();
+        Button[] buttons = new Button[]{
+                (Button) findViewById(R.id.button1),
+                (Button) findViewById(R.id.button2),
+                (Button) findViewById(R.id.button3),
+                (Button) findViewById(R.id.button4),
+                (Button) findViewById(R.id.button5),
+                (Button) findViewById(R.id.button6),
+                (Button) findViewById(R.id.button7),
+                (Button) findViewById(R.id.button8),
+                (Button) findViewById(R.id.button9)};
+        for (int i=0; i<buttons.length; i++) {
+            buttons[i].setText("");
+        }
+    }
 
     protected void updateBottomMsg() {
         TextView bottomMsg = (TextView) findViewById(R.id.bottomMsg);
