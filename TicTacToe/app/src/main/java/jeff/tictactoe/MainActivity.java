@@ -109,6 +109,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void makeMove(Button button, int pos) {
+        // ensure location is currently empty
+        if (button.getText().toString().compareTo("") != 0) {
+            return;
+        }
+        // ensure game is not over
+        if (gameOver) {
+            return;
+        }
         if (xTurn) {
             button.setText("X");
             button.setTextSize(20);
@@ -200,7 +208,7 @@ public class MainActivity extends AppCompatActivity {
         }
         // check row2
         if (gameBoard[3] != 'E' && gameBoard[3] == gameBoard[4] && gameBoard[3] == gameBoard[5]) {
-            if (gameBoard[0] == 'X') {
+            if (gameBoard[3] == 'X') {
                 xWins = true;
             }
             else {
@@ -210,7 +218,7 @@ public class MainActivity extends AppCompatActivity {
         }
         // check row3
         if (gameBoard[6] != 'E' && gameBoard[6] == gameBoard[7] && gameBoard[6] == gameBoard[8]) {
-            if (gameBoard[0] == 'X') {
+            if (gameBoard[6] == 'X') {
                 xWins = true;
             }
             else {
@@ -230,7 +238,7 @@ public class MainActivity extends AppCompatActivity {
         }
         // check col2
         if (gameBoard[1] != 'E' && gameBoard[1] == gameBoard[4] && gameBoard[1] == gameBoard[7]) {
-            if (gameBoard[0] == 'X') {
+            if (gameBoard[1] == 'X') {
                 xWins = true;
             }
             else {
@@ -240,7 +248,7 @@ public class MainActivity extends AppCompatActivity {
         }
         // check col3
         if (gameBoard[2] != 'E' && gameBoard[2] == gameBoard[5] && gameBoard[2] == gameBoard[8]) {
-            if (gameBoard[0] == 'X') {
+            if (gameBoard[2] == 'X') {
                 xWins = true;
             }
             else {
@@ -260,7 +268,7 @@ public class MainActivity extends AppCompatActivity {
         }
         // check diagonal 2
         if (gameBoard[2] != 'E' && gameBoard[2] == gameBoard[4] && gameBoard[2] == gameBoard[6]) {
-            if (gameBoard[0] == 'X') {
+            if (gameBoard[2] == 'X') {
                 xWins = true;
             }
             else {
