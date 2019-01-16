@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">TicTacToe</string>
     <string name="p1_s_turn">P1\'s Turn</string>
+    <string name="p2_s_turn">P1\'s Turn</string>
+    <string name="p1_wins">P1 Wins!</string>
+    <string name="p2_wins">P2 Wins!</string>
+    <string name="tie">It is a Tie!</string>
 </resources>
